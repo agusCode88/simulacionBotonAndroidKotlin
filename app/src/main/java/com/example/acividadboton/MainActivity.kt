@@ -25,6 +25,17 @@ Cuando se hace clic en el botón real en la pantalla, se llama al método onclic
 clase DisenioBoton, que cambia el fondo del botón utilizando el método cambiarFondo().
 Además, el botón simulado muestra un mensaje en la consola para indicar que se ha hecho clic en él.
 
+Por hacer:
+
+Dibuje realmente un boton centrado en Android con XML
+Agrega la Clase View- Button - DisenioButton aplicando Herencia
+Agrega mas funcionalidades a las clases mediante clases abstractas o interfaces
+Simula como funciona el Boton (Se proporciona codigo en el Main Activity)
+Detecta el evento de clik del boton de la app y llama al onclick de la herencia
+Prueba y mejora la aplicacion como gustes.
+
+Mucho Exito !
+
 
  */
 
