@@ -12,6 +12,22 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.acividadboton.ui.theme.AcividadBotonTheme
 
+/*
+TAREA 05/05/2023
+
+
+En este código, se ha creado una clase MainActivity que es la actividad principal de Android.
+Dentro del método onCreate(), se crea una instancia de la clase DisenioBoton y se llama al método inflar()
+para que el botón se muestre en la pantalla.
+Luego, se llama al método agregarBordes() para agregar bordes al botón.
+También se ha agregado un botón simulado en la clase DisenioBoton.
+Cuando se hace clic en el botón real en la pantalla, se llama al método onclick() de la
+clase DisenioBoton, que cambia el fondo del botón utilizando el método cambiarFondo().
+Además, el botón simulado muestra un mensaje en la consola para indicar que se ha hecho clic en él.
+
+
+ */
+
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
