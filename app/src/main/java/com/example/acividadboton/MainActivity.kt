@@ -1,16 +1,19 @@
 package com.example.acividadboton
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.acividadboton.ui.theme.AcividadBotonTheme
+import android.util.Log
+import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
+import androidx.core.content.ContextCompat
+import com.example.acividadboton.databinding.ActivityMainBinding
+import com.example.acividadboton.modelo.Boton
+import com.example.acividadboton.modelo.ButtonDesign
+import com.example.acividadboton.modelo.Planeta
+import com.squareup.picasso.Picasso
 
 /*
 TAREA 05/05/2023
@@ -39,23 +42,82 @@ Mucho Exito !
 
  */
 
-class MainActivity : ComponentActivity() {
+var disenioBoton = ButtonDesign("Aprietame","center",40)
+var botonCreado = Boton("Aprietame","center")
+private lateinit var binding:ActivityMainBinding
+private lateinit var valorCampo:String
+
+
+class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-//        val botonSimulado = DisenioBoton("Mi botón simulado", "centrado", 20)
-//
-//        botonSimulado.inflar()
-//        botonSimulado.agregarBordes()
-//
-//        val boton = findViewById<Button>(R.id.boton)
-//        boton.setOnClickListener {
-//            botonSimulado.onclick()
-//        }
+        var toolbarActivity = findViewById<Toolbar>(R.id.toolbar)
+        setSupportActionBar(toolbarActivity )
+        //supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+
+        val boton = findViewById<Button>(R.id.button_main)
+        val campoTexto = findViewById<EditText>(R.id.edt1)
+       // val constraintView = findViewById<ConstraintLayout>(R.id.constraintLayout)
+        valorCampo = campoTexto.text.toString()
+        disenioBoton.inflar()
+        botonCreado.inflar()
+
+
+        boton.setOnClickListener{
+
+
+        }
+
+        binding.buttonImplicit.setOnClickListener {
+
+
+
+        }
+
+        binding.btnAppBar.setOnClickListener({
+
+        })
 
     }
-}
 
+    fun executeExplicitIntent(){
+
+        val planeta = Planeta("Marte",2000f,"Martes",true)
+        var intent = Intent(this, Activity2::class.java)
+        Toast.makeText(this,"Presionaste el boton",Toast.LENGTH_LONG).show()
+        Log.i("MainActivity","El boton ha sido presionado valor variable ${valorCampo}")
+
+        intent.putExtra("valor",valorCampo)
+        intent.putExtra("planeta",planeta)
+//            Snackbar.make(constraintView,"Esta es la variable viajando ",Snackbar.LENGTH_LONG).show()
+        startActivity(intent)
+    }
+
+    fun executeImplicitInten(){
+
+        var intent2 = Intent()
+        intent2.action = Intent.ACTION_SEND
+        intent2.putExtra(Intent.EXTRA_TEXT, valorCampo)
+        intent2.type="text/plain"
+        startActivity(Intent.createChooser(intent2,"Comparte esta noticia: "))
+    }
+
+    fun executeActivityCamera(){
+        var intent = Intent(this, Activity3::class.java)
+        startActivity(intent)
+
+    }
+
+    fun executePicassoActivity(){
+        var intent = Intent(this, PicassoActivity::class.java)
+        startActivity(intent)
+    }
+
+}
 
 
 

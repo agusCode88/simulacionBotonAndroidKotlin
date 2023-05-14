@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="10"
+    tools:context=".PicassoActivity">
+
+    <ImageView
+        android:id="@+id/imgPicasso1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4.5"/>
+
+    <ImageView
+        android:id="@+id/imgPicasso2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4.5"/>
+
+    <Button
+        android:id="@+id/btnLoadImages"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="Cargar Imagenes"
+        android:layout_weight="1"/>
+
+</LinearLayout>
