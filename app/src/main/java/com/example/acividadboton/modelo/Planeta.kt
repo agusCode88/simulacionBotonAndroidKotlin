@@ -9,7 +9,6 @@ data class Planeta(
     var diaSemana: String?,
     var energia:Boolean) : Parcelable {
 
-
     constructor(parcel: Parcel) : this(
         parcel.readString(),
         parcel.readFloat(),
@@ -38,4 +37,6 @@ data class Planeta(
             return arrayOfNulls(size)
         }
     }
+
+
 }

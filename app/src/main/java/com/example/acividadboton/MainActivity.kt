@@ -82,6 +82,8 @@ class MainActivity : AppCompatActivity() {
 
         })
 
+        binding.btnPicasso.setOnClickListener { executePicassoActivity() }
+
     }
 
     fun executeExplicitIntent(){
