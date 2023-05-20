@@ -58,9 +58,7 @@ class PlanetProvider {
                 "domingo",
                 true),
 
-
             )
-
 
     }
 

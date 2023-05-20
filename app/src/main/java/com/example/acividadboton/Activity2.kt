@@ -28,14 +28,3 @@ class Activity2 : AppBarActivity() {
 }
 
 
-
-/*
-   var textoPantalla = findViewById<TextView>(R.id.txtResult)
-        val bundle: Bundle? = intent.extras
-        val rescatado: String? = bundle?.getString("valor")
-        val planeta = bundle?.getParcelable<Planeta>("planeta")
-
-        if (planeta != null && rescatado != null) {
-            // hacer algo con el planeta recibida
-        }
- */

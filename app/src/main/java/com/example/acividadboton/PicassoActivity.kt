@@ -25,7 +25,6 @@ class PicassoActivity : AppCompatActivity() {
 
     }
 
-
     fun loadImagesFromPicasso(){
 
         Picasso
